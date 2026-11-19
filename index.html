@@ -175,7 +175,7 @@ dialog button.primary{border-color:var(--accent);background:var(--accent);color:
     <h1>ברק — מחיר ותשלומים</h1>
     <div class="sub">
       <b>ברק הנדסת בניין, שלד ושיפוצים</b> · ברק פוקס · קבלן רשום · בית ניר 1, בת חפר · 054-4999011<br>
-      הצעה מ-22.3.2026 · העבודה בעיצומה · מע״מ <span id="vatlabel">18</span>%<br>
+      הצעה מ-22.3.2026 · 640,000 ₪ + מע״מ · העבודה בעיצומה · מע״מ <span id="vatlabel">18</span>%<br>
       המחיר הסופי נמסר בכתב ידו ב-18.11.2026
     </div>
   </header>
@@ -203,16 +203,7 @@ dialog button.primary{border-color:var(--accent);background:var(--accent);color:
 
     <details class="fold">
     <summary>
-      <h2>2 · ההקטנות</h2>
-      <span class="hint">שני סעיפים שירדו בדרך · לפתיחה</span>
-      <span class="foldsum" id="sum-cuts"></span>
-    </summary>
-    <div class="scroll"><table id="t-cuts"></table></div>
-    </details>
-
-    <details class="fold">
-    <summary>
-      <h2>3 · התוספות</h2>
+      <h2>2 · התוספות</h2>
       <span class="hint">נמסרו בכתב ידו 18.11.2026 · לפתיחה</span>
       <span class="foldsum" id="sum-extras"></span>
     </summary>
@@ -228,8 +219,17 @@ dialog button.primary{border-color:var(--accent);background:var(--accent);color:
   <section>
     <details class="fold">
     <summary>
-      <h2>אופן התשלום</h2>
-      <span class="hint">בלי לוח תשלומים · לפתיחה</span>
+      <h2>לוח התשלומים שבהצעה</h2>
+      <span class="hint">13 אבני דרך · מתוך ההצעה עצמה · לפתיחה</span>
+      <span class="foldsum" id="sum-sched"></span>
+    </summary>
+    <div class="scroll"><table id="t-sched"></table></div>
+    </details>
+
+    <details class="fold">
+    <summary>
+      <h2>מה שולם בפועל</h2>
+      <span class="hint">12 העברות · לפתיחה</span>
       <span class="foldsum" id="sum-pay"></span>
     </summary>
     <div class="scroll"><table id="t-pay"></table></div>
@@ -264,7 +264,7 @@ dialog button.primary{border-color:var(--accent);background:var(--accent);color:
       <span class="hint">חמישה דברים ששווה לסגור מראש · לפתיחה</span>
     </summary>
     <ol class="lessons">
-      <li><span class="i">1</span><span><b>חוזה חתום ולוח תשלומים לפני שמתחילים.</b> <span class="d">בלי לוח, כל תשלום הוא משא ומתן מחדש.</span></span></li>
+      <li><span class="i">1</span><span><b>לוח תשלומים זה חצי מהעבודה — החצי השני הוא לעקוב אחריו.</b> <span class="d">בהצעה שלנו <b>היה</b> לוח מפורט: 13 אבני דרך לפי שלבי עבודה, שמסתכמות בדיוק ל-755,200. המקדמה שולמה בדיוק לפיו. <b>ומשם הוא נזנח</b> — 11 ההעברות הבאות יצאו לפי קצב ולפי בקשה, בסכומים שאינם מופיעים בו. <b>לפני כל העברה, לבדוק מול הלוח איזו אבן דרך נסגרה.</b></span></span></li>
       <li><span class="i">2</span><span><b>לשמור אסמכתה מהתשלום הראשון.</b> <span class="d">אצלנו ששת הראשונים נעשו לפני שהתחלנו לתייק, וכשהגיע הזמן להשוות ספרים זו התקופה היחידה שאי אפשר לאמת.</span></span></li>
       <li><span class="i">3</span><span><b>״הערכה גסה״ בחשמל היא באמת הערכה — ומחיר לנקודה בעל פה לא שווה כלום בלי ספירה.</b> <span class="d">תומחר 63,000, נגמר ב-114,000 לפני מע״מ. קיבלנו מחיר לכל נקודה, אבל אף אחד לא ספר נקודות תוך כדי — והתוספת הגיעה בסוף כמספר אחד. <b>לסגור את החשמל אחרי תוכנית נקודות, ולדרוש את מחיר היחידה בכתב ואת הספירה המצטברת בכל שלב.</b></span></span></li>
       <li><span class="i">4</span><span><b>״לפי מפרט״ מגן רק על מה שבמפרט.</b> <span class="d">לבקש לראות אותו לפני החתימה.</span></span></li>
@@ -300,18 +300,28 @@ const esc = s => String(s==null?"":s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&l
 const parseNum = s => { const v = Number(String(s).replace(/[^\d.-]/g,"")); return isFinite(v)?v:null; };
 
 /* ---------- built-in defaults: the page renders from these before db answers ---------- */
+/* The 11 lines exactly as they appear in "הצעת מחיר יעל ורועי.docx", in its order and its wording.
+   The document's own total is 640,000 + מע״מ. There were no reductions. */
 const DEF_TOPICS = [
-  {id:"t1", label:"הוצאת מדרגות — כלונסאות, עמודים, בנייה, מכולות, גג רעפים", pre:140000, cut:140000},
-  {id:"t2", label:"טייח פנים — פתחי חלונות, גליפים, רשתות, ב-2 הקומות", pre:76000, cut:69000, note:"הוקטן ב-7,000"},
-  {id:"t3", label:"שליכט צבעוני חיצוני — רשתות, דבק, פיגומים", pre:67000, cut:67000},
-  {id:"t4", label:"צבע פנים כולל שפכטל", pre:65000, cut:65000},
-  {id:"t5", label:"עבודות חשמל", pre:63000, cut:63000, note:"בהצעה נכתב ״הערכה גסה״, לפני שהיו תוכניות חשמל. התוספת בפועל — 51,000 לפני מע״מ — מופיעה בטבלת התוספות."},
-  {id:"t6", label:"הריסה כולל פינוי למכולות", pre:56000, cut:56000},
-  {id:"t7", label:"אינסטלציה", pre:52000, cut:52000, note:"בהצעה נכתב ״לפי מפרט״. המפרט עצמו לא צורף."},
-  {id:"t8", label:"בנייה — מחיצות וקירות", pre:51000, cut:41000, note:"הוקטן ב-10,000"},
-  {id:"t9", label:"חיפוי וריצוף מקלחות כולל כניסה", pre:34000, cut:34000},
-  {id:"t10", label:"איטום — מסביב לבית, חדרים רטובים, מרפסת שמש", pre:27000, cut:27000},
-  {id:"t11", label:"מרפסת שמש בגג", pre:26000, cut:26000}
+  {id:"t1",  label:"עבודות הריסה כולל פינוי למכולות", pre:56000},
+  {id:"t2",  label:"עבודות אינסטלציה לפי מפרט", pre:52000, note:"״לפי מפרט״ — והמפרט עצמו לא צורף להצעה."},
+  {id:"t3",  label:"עבודות צבע פנים כולל שפכטל", pre:65000},
+  {id:"t4",  label:"שליכט צבעוני כולל רשתות ודבק כולל פיגומים", pre:67000},
+  {id:"t5",  label:"עבודות טייח פנים כולל פתחי חלונות, גליפים, רשתות — ב-2 הקומות", pre:69000},
+  {id:"t6",  label:"עבודות בניה כולל מחיצות, קירות גבס ובידוד דחוס", pre:41000},
+  {id:"t7",  label:"עבודות איטום מסביב הבית כולל חדרים רטובים כולל מרפסת שמש", pre:27000},
+  {id:"t8",  label:"עבודות חשמל — הערכה גסה", pre:63000, note:"המילים ״הערכה גסה״ הן שלו, בגוף ההצעה. התוספת בפועל — עוד 51,000 לפני מע״מ — מופיעה בתוספות."},
+  {id:"t9",  label:"עבודות חיפוי וריצוף מקלחות כולל כניסה לבית", pre:34000},
+  {id:"t10", label:"מרפסת שמש בגג", pre:26000},
+  {id:"t11", label:"הוצאת מדרגות כולל כלונסאות, בניה, מכולות וגג רעפים", pre:140000}
+];
+/* "תנאי תשלום" from the same document — 13 milestones, incl. VAT, summing to 755,200. */
+const DEF_SCHEDULE = [
+  {n:"מקדמה", v:75520}, {n:"הריסות", v:55460}, {n:"אינסטלציה", v:52156},
+  {n:"צבע", v:65195}, {n:"שליכט צבעוני", v:67201}, {n:"טייח פנים", v:67968},
+  {n:"עבודות בניה", v:41123}, {n:"עבודות איטום", v:27081}, {n:"עבודות חשמל", v:63189},
+  {n:"עבודות חיפוי וריצוף", v:34102}, {n:"מרפסת שמש בגג", v:26078},
+  {n:"הוצאת מדרגות", v:140420}, {n:"מסירה", v:39707}
 ];
 /* Exactly the lines on Barak's handwritten page, photographed 18.11.2026 19:34, in his order.
    Nothing here comes from anywhere else. Descriptions we could not read are marked, not guessed. */
@@ -367,7 +377,7 @@ const listOf = kind => kind==="topic"?topics : kind==="extra"?extras : pays;
 
 /* ---------- totals ---------- */
 function totals(){
-  const tPre  = topics.reduce((s,r)=>s+(r.cut||0),0);
+  const tPre  = topics.reduce((s,r)=>s+(r.pre||0),0);
   const xPre  = extras.reduce((s,r)=>s+(r.pre||0),0);
   const charged = (meta.extrasCharged==null) ? xPre : meta.extrasCharged;
   const chargedInc = (meta.extrasChargedInc==null) ? charged*VAT : meta.extrasChargedInc;
@@ -416,23 +426,26 @@ function renderTopics(){
     h+='<tr><td>'+name+'</td>'+nCell(r.pre,r.id,"pre","mute")
       +'<td class="n">'+fmt((r.pre||0)*VAT)+'</td></tr>';
   }
-  h+='<tr class="total"><td>סה״כ ההצעה</td><td class="n">'+fmt(t.offerPre)+'</td><td class="n big">'+fmt(t.offerPre*VAT)+'</td></tr></tbody>';
+  h+='<tr class="total"><td>סה״כ ההצעה</td><td class="n">'+fmt(t.offerPre)+'</td><td class="n big">'+fmt(t.offerPre*VAT)+'</td></tr>';
+  h+='<tr class="check"><td colspan="3">המספר <b>640,000 + מע״מ</b> כתוב בגוף ההצעה, מתחת לרשימה.</td></tr></tbody>';
   document.getElementById("t-topics").innerHTML=h;
   document.getElementById("sum-topics").innerHTML=fmt(t.offerPre*VAT)+'<small>'+fmt(t.offerPre)+' לפני מע״מ</small>';
 }
-function renderCuts(){
-  const t=totals(), cut=topics.filter(r=>(r.cut||0)!==(r.pre||0));
-  let h='<thead><tr><th>הסעיף</th><th>בהצעה</th><th>סוכם</th><th>ההקטנה</th><th>כולל מע״מ</th></tr></thead><tbody>';
-  for(const r of cut){
-    const d=(r.cut||0)-(r.pre||0);
-    h+='<tr><td>'+esc(r.label.replace(/ —.*/,""))+'</td><td class="n mute">'+fmt(r.pre)+'</td>'
-      +nCell(r.cut,r.id,"cut")+'<td class="n">'+fmtS(d)+'</td><td class="n">'+fmtS(d*VAT)+'</td></tr>';
-  }
-  const d=t.tPre-t.offerPre;
-  h+='<tr class="total"><td>סה״כ ההקטנות</td><td></td><td></td><td class="n">'+fmtS(d)+'</td><td class="n big">'+fmtS(d*VAT)+'</td></tr>';
-  h+='<tr class="check"><td colspan="5">ההקטנות סוכמו מול ברק בדרך. הבסיס אחרי ההקטנות: <b>'+fmt(t.tPre)+'</b> לפני מע״מ · <b>'+fmt(t.tInc)+'</b> כולל.</td></tr></tbody>';
-  document.getElementById("t-cuts").innerHTML=h;
-  document.getElementById("sum-cuts").innerHTML=fmtS(d*VAT)+'<small>'+fmtS(d)+' לפני מע״מ</small>';
+function renderSched(){
+  const paidN=pays.length;
+  let run=0, h='<thead><tr><th>#</th><th>אבן הדרך</th><th>כולל מע״מ</th><th>מצטבר</th><th>% מההצעה</th></tr></thead><tbody>';
+  const tot=DEF_SCHEDULE.reduce((s,r)=>s+r.v,0);
+  DEF_SCHEDULE.forEach((r,i)=>{
+    run+=r.v;
+    h+='<tr><td class="mute">'+(i+1)+'</td><td>'+esc(r.n)+'</td><td class="n">'+fmt(r.v)+'</td>'
+      +'<td class="n mute">'+fmt(run)+'</td><td class="n">'+(run/tot*100).toFixed(1)+'%</td></tr>';
+  });
+  h+='<tr class="total"><td></td><td>סה״כ</td><td class="n big">'+fmt(tot)+'</td><td></td><td class="n">100%</td></tr>';
+  h+='<tr class="check"><td colspan="5">הסכום מדויק: 640,000 × 1.18 = <b>755,200</b>. '
+   +'<b>התשלום הראשון שביצענו, 75,520, זהה בדיוק למקדמה כאן.</b> '
+   +'אחריו התשלומים כבר לא עקבו אחרי אבני הדרך — '+(paidN-1)+' ההעברות הבאות יצאו בסכומים אחרים ולפי קצב, לא לפי הרשימה הזאת.</td></tr></tbody>';
+  document.getElementById("t-sched").innerHTML=h;
+  document.getElementById("sum-sched").innerHTML=fmt(tot)+'<small>13 אבני דרך</small>';
 }
 function renderExtras(){
   const t=totals(), span=canEdit?4:3, diff=t.xPre-t.charged;
@@ -464,7 +477,7 @@ function renderBridge(){
   const bigPct = t.xPre? Math.round((big.reduce((s,r)=>s+r.pre,0))/t.xPre*100):0;
   document.getElementById("chips-bridge").innerHTML=
     '<span class="chip">התוספות הן '+pct+'% מהעבודה</span>'
-   +'<span class="chip">'+esc(big.map(r=>r.label.replace(/ —.*/,"")).join(" + "))+' לבדם — '+bigPct+'% מהתוספות</span>'
+   +'<span class="chip">'+esc(big.map(r=>r.label.replace(/^[^·]{1,4}·\s*/,"").replace(/ —.*/,"")).join(" + "))+' לבדם — '+bigPct+'% מהתוספות</span>'
    +'<span class="chip">תומחרו לאורך הדרך, לא מראש</span>';
 }
 function renderPay(){
@@ -489,7 +502,8 @@ function renderPay(){
     '<span class="chip">'+pays.length+' העברות · ממוצע ~'+fmt(t.paid/(pays.length||1))+'</span>'
    +'<span class="chip">נותר '+fmt(t.left)+' · העבודה בעיצומה</span>'
    +'<span class="chip">טווח '+fmt(Math.min(...amts))+'–'+fmt(Math.max(...amts))+'</span>'
-   +'<span class="chip">אין מקדמה מוגדרת</span>'
+   +'<span class="chip">המקדמה שולמה בדיוק כפי שנקבעה — 75,520</span>'
+   +'<span class="chip">אחריה התשלומים לא עקבו אחרי אבני הדרך</span>'
    +(miss.length?'<span class="chip" style="border-color:var(--flag);color:var(--flag)">חסרות '+miss.length+' אסמכתאות</span>':'<span class="chip">כל האסמכתאות קיימות ✓</span>');
 }
 function renderKpis(){
@@ -574,7 +588,7 @@ function renderTools(){
   document.getElementById("tb-pay").innerHTML = canEdit
     ? '<button class="mini go" id="add-pay">+ תשלום חדש</button>' : "";
 }
-function renderAll(){ renderKpis(); renderTopics(); renderCuts(); renderExtras(); renderBridge(); renderPay(); renderTools(); renderShelf(); renderNot(); }
+function renderAll(){ renderKpis(); renderTopics(); renderSched(); renderExtras(); renderBridge(); renderPay(); renderTools(); renderShelf(); renderNot(); }
 
 /* ---------- persistence ---------- */
 let saveTimer=null;
