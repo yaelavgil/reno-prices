@@ -1,0 +1,734 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="כמה עלה שיפוץ בית פרטי בבת חפר ב-2026 — המחיר לפי סעיפים, התוספות, אופן התשלום, וכל הספקים שאינם הקבלן.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="ברק — מחיר ותשלומים · שיפוץ בבת חפר 2026">
+<meta property="og:description" content="המחיר המלא לפי סעיפים, התוספות שצצו בדרך, 12 התשלומים, וכל שאר הספקים עם הסכומים.">
+<meta property="og:locale" content="he_IL">
+<meta name="theme-color" content="#0f6e76">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%A7%BE%3C/text%3E%3C/svg%3E">
+<!-- static build: no sign-in, no database, no uploads. capability calls resolve to null. -->
+<script>window.claude={use:function(){return Promise.resolve(null)}};</script>
+</head>
+<body>
+<title>ברק — מחיר ותשלומים</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700;900&family=Assistant:wght@400;600;700&display=swap">
+<style>
+/* RTL single column. Figures and evidence render from state; db overlays the built-in defaults. */
+:root{
+  --bg:#f4f6f7; --surface:#ffffff; --ink:#10202c; --muted:#5d7180; --line:#dde4e8;
+  --accent:#0f6e76; --accent-soft:#e2eff0; --flag:#9c3a28; --ok:#2e7d5b;
+  --font-display:"Heebo","Arial Hebrew",system-ui,sans-serif;
+  --font-body:"Assistant","Heebo",system-ui,sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0d151a;--surface:#151f26;--ink:#e7eef2;--muted:#9aacb8;--line:#26333c;
+    --accent:#4fb3bb;--accent-soft:#173235;--flag:#e0775f;--ok:#5fbd92;color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0d151a;--surface:#151f26;--ink:#e7eef2;--muted:#9aacb8;--line:#26333c;
+  --accent:#4fb3bb;--accent-soft:#173235;--flag:#e0775f;--ok:#5fbd92;color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--font-body);font-size:15px;line-height:1.5;direction:rtl;margin:0}
+.wrap{max-width:900px;margin:0 auto;
+  padding-left:max(16px,env(safe-area-inset-left,0px));
+  padding-right:max(16px,env(safe-area-inset-right,0px));
+  padding-block:28px 56px;display:flex;flex-direction:column;gap:32px}
+h1,h2{font-family:var(--font-display);text-wrap:balance;margin:0}
+h1{font-size:clamp(26px,6vw,38px);font-weight:900;letter-spacing:-.02em;line-height:1.1}
+h2{font-size:17px;font-weight:700}
+.num,td.n,.kpi .v,.kpi .pre{font-variant-numeric:tabular-nums}
+
+header{display:flex;flex-direction:column;gap:10px;border-bottom:3px solid var(--ink);padding-bottom:18px}
+.eyebrow{font-family:var(--font-display);font-size:11px;font-weight:700;letter-spacing:.14em;color:var(--accent)}
+.sub{color:var(--muted);font-size:14px}
+.sub b{color:var(--ink);font-weight:600}
+
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+.kpi{background:var(--surface);padding:13px 15px;min-width:0}
+.kpi .k{font-size:11px;color:var(--muted);letter-spacing:.06em;font-weight:600}
+.kpi .v{font-family:var(--font-display);font-weight:900;font-size:clamp(18px,4.3vw,24px);letter-spacing:-.01em;margin-top:3px}
+.kpi .pre{font-size:11.5px;color:var(--muted);margin-top:2px}
+.kpi.lead .v{color:var(--accent)}
+@media (max-width:600px){.kpis{grid-template-columns:repeat(2,1fr)}}
+
+section{display:flex;flex-direction:column;gap:12px}
+.shead{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.shead .note{font-size:12.5px;color:var(--muted)}
+.scroll{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:14px;min-width:440px}
+th,td{padding:10px 14px 10px 0;text-align:right;border:0;white-space:nowrap;vertical-align:top}
+th:last-child,td:last-child{padding-inline-end:0}
+th{font-family:var(--font-display);font-size:10.5px;font-weight:700;color:var(--muted);letter-spacing:.07em;padding-bottom:6px}
+thead th{border-bottom:1px solid var(--line)}
+tbody tr+tr td{border-top:1px solid var(--line)}
+td:first-child,th:first-child{white-space:normal;min-width:180px}
+td.mute{color:var(--muted)}
+tr.total td{font-weight:700;border-top:2px solid var(--ink);padding-top:12px}
+tr.total td.big{font-family:var(--font-display);font-weight:900;color:var(--accent)}
+tr.check td{border-top:1px dashed var(--line);font-size:12.5px;color:var(--muted);white-space:normal}
+
+details summary{cursor:pointer;list-style:none;display:flex;gap:7px;align-items:baseline}
+details summary::-webkit-details-marker{display:none}
+details summary::before{content:"+";font-family:var(--font-display);font-weight:900;color:var(--accent);font-size:13px;line-height:1.45;min-width:9px}
+details[open] summary::before{content:"\2013"}
+details summary:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+details.fold>summary{align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:2px;border-bottom:1px solid var(--line);padding-bottom:9px}
+details.fold[open]>summary{border-bottom-color:var(--ink)}
+details.fold>summary::before{font-size:19px;min-width:13px;line-height:1.2}
+details.fold>summary h2{display:inline}
+details.fold>summary .hint{font-size:12.5px;color:var(--muted)}
+details.fold[open]>summary .hint{display:none}
+details.fold>summary .foldsum{margin-inline-start:auto;font-family:var(--font-display);font-weight:900;font-size:17px;color:var(--accent);font-variant-numeric:tabular-nums;white-space:nowrap}
+details.fold>summary .foldsum small{display:block;font-family:var(--font-body);font-weight:400;font-size:11.5px;color:var(--muted);text-align:left}
+.det{margin:7px 0 2px 0;padding-inline-start:16px;font-size:13px;color:var(--muted);display:flex;flex-direction:column;gap:3px;white-space:normal}
+.det .q{color:var(--ink);font-weight:600}
+.grand{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;border-top:2px solid var(--ink);padding-top:11px;margin-top:2px}
+.grand h2{font-size:17px}
+.grand .foldsum{margin-inline-start:auto;font-family:var(--font-display);font-weight:900;font-size:22px;color:var(--accent);font-variant-numeric:tabular-nums;white-space:nowrap;letter-spacing:-.01em}
+.grand .foldsum small{display:block;font-family:var(--font-body);font-weight:400;font-size:11.5px;color:var(--muted);text-align:left;letter-spacing:0}
+.rowlab{font-family:var(--font-display);font-weight:800;font-size:12.5px;margin:14px 0 6px}
+.rowlab.yes{color:var(--accent)} .rowlab.no{color:var(--muted)}
+
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{font-size:12.5px;padding:4px 10px;border:1px solid var(--line);border-radius:999px;background:var(--surface)}
+.chip.out{color:var(--muted);border-style:dashed}
+button.chip.out{font:inherit;font-size:12.5px;cursor:pointer}
+button.chip.out:hover{border-color:var(--accent);color:var(--accent)}
+button.chip.out[aria-expanded="true"]{border-style:solid;border-color:var(--accent);color:var(--accent);background:var(--accent-soft);font-weight:700}
+button.chip.out .amt{font-variant-numeric:tabular-nums;font-weight:700;margin-inline-start:5px;opacity:.75}
+button.chip.out.unk .amt{color:var(--flag);opacity:1}
+.notpanel{border:1px solid var(--line);border-inline-start:3px solid var(--accent);background:var(--surface);padding:11px 14px;font-size:13px;display:flex;flex-direction:column;gap:7px}
+.notpanel .hd{font-family:var(--font-display);font-weight:800;font-size:13.5px}
+.notpanel .ln{display:flex;gap:10px;align-items:baseline;flex-wrap:wrap}
+.notpanel .ln .sp{min-width:160px}
+.notpanel .ln .v{font-variant-numeric:tabular-nums;font-weight:700;color:var(--accent);margin-inline-start:auto}
+.notpanel .ln .v.unk{color:var(--flag)}
+.notpanel .wn{font-size:12px;color:var(--muted)}
+.notfoot{font-size:12.5px;color:var(--muted)}
+.notfoot b{color:var(--ink)}
+
+.bar{display:block;height:6px;background:var(--line);border-radius:3px;overflow:hidden;min-width:56px}
+.bar i{display:block;height:100%;background:var(--accent);border-radius:3px}
+td.barcell{width:80px}
+
+ol.lessons{margin:0;padding-inline-start:0;list-style:none;display:flex;flex-direction:column;gap:10px}
+ol.lessons li{display:flex;gap:11px;align-items:baseline}
+ol.lessons .i{font-family:var(--font-display);font-weight:900;color:var(--accent);font-size:13px;min-width:16px}
+ol.lessons span.d{color:var(--muted);font-size:13.5px}
+
+footer{border-top:1px solid var(--line);padding-top:14px;display:flex;flex-direction:column;gap:7px;font-size:13px;color:var(--muted)}
+footer b{color:var(--flag);font-weight:700}
+
+/* ---- evidence + editing ---- */
+.ev{display:flex;gap:5px;align-items:center;flex-wrap:wrap;white-space:nowrap}
+a.evlink{display:inline-flex;align-items:center;gap:4px;font-size:12px;padding:3px 8px;border-radius:999px;
+  border:1px solid var(--line);background:var(--accent-soft);color:var(--accent);text-decoration:none;font-weight:600;max-width:150px;overflow:hidden;text-overflow:ellipsis}
+a.evlink:hover{border-color:var(--accent)}
+.evmiss{font-size:12px;color:var(--flag);border:1px dashed var(--flag);border-radius:999px;padding:3px 9px;opacity:.85}
+button.mini{font:inherit;font-size:12px;font-weight:600;cursor:pointer;border:1px dashed var(--line);background:none;
+  color:var(--muted);border-radius:999px;padding:3px 9px;line-height:1.35}
+button.mini:hover{border-color:var(--accent);color:var(--accent);border-style:solid}
+button.mini.go{border-style:solid;border-color:var(--accent);color:var(--accent);background:var(--accent-soft)}
+button.mini[disabled]{opacity:.5;cursor:default}
+button.xs{font:inherit;font-size:11px;cursor:pointer;border:0;background:none;color:var(--muted);padding:0 2px}
+button.xs:hover{color:var(--flag)}
+.editable{cursor:text;border-bottom:1px dashed transparent;outline:none}
+body.canedit .editable{border-bottom-color:var(--line)}
+body.canedit .editable:hover{border-bottom-color:var(--accent)}
+.editable:focus{border-bottom-color:var(--accent)!important;background:var(--accent-soft)}
+.toolbar{display:flex;gap:8px;align-items:center;flex-wrap:wrap;font-size:12.5px;color:var(--muted)}
+.shelf{border:1px solid var(--line);border-inline-start:3px solid var(--accent);background:var(--surface);padding:12px 14px;display:flex;flex-direction:column;gap:10px}
+.shelf>.t{font-family:var(--font-display);font-weight:800;font-size:12.5px;display:flex;gap:8px;align-items:baseline;flex-wrap:wrap}
+.shelf>.t em{font-style:normal;font-weight:400;font-size:11.5px;color:var(--muted)}
+.slot{display:flex;gap:8px;align-items:baseline;flex-wrap:wrap;font-size:13px}
+.slot+.slot{border-top:1px solid var(--line);padding-top:9px}
+.slot .nm{min-width:168px;color:var(--muted)}
+.slot.has .nm{color:var(--ink);font-weight:600}
+.hidden{display:none!important}
+.saving{font-size:12px;color:var(--accent)}
+.banner{font-size:12.5px;color:var(--muted);background:var(--surface);border:1px solid var(--line);
+  border-inline-start:3px solid var(--accent);padding:9px 12px;display:flex;gap:8px;align-items:baseline;flex-wrap:wrap}
+.banner[hidden]{display:none}
+dialog{border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:4px;max-width:420px;width:92vw;padding:18px;font-family:var(--font-body);direction:rtl}
+dialog::backdrop{background:rgba(5,15,20,.45)}
+dialog h3{font-family:var(--font-display);margin:0 0 4px;font-size:16px}
+dialog p{margin:0 0 12px;font-size:12.5px;color:var(--muted)}
+dialog input{width:100%;font:inherit;padding:8px 10px;border:1px solid var(--line);background:var(--bg);color:var(--ink);border-radius:3px;direction:ltr;text-align:left}
+dialog input.rtl{direction:rtl;text-align:right}
+dialog .row{display:flex;gap:8px;justify-content:flex-start;margin-top:14px}
+dialog button{font:inherit;font-size:13px;cursor:pointer;padding:7px 14px;border-radius:3px;border:1px solid var(--line);background:none;color:var(--muted)}
+dialog button.primary{border-color:var(--accent);background:var(--accent);color:#fff;font-weight:700}
+</style>
+
+<div class="wrap">
+
+  <header>
+    <div class="eyebrow">שיפוץ בית פרטי · בת חפר</div>
+    <h1>ברק — מחיר ותשלומים</h1>
+    <div class="sub">
+      <b>ברק הנדסת בניין, שלד ושיפוצים</b> · ברק פוקס · קבלן רשום · בית ניר 1, בת חפר · 054-4999011<br>
+      הצעה מ-22.3.2026 · העבודה בעיצומה · מע״מ <span id="vatlabel">18</span>%<br>
+      המחיר הסופי נמסר בכתב ידו ב-18.11.2026
+    </div>
+  </header>
+
+  <div class="banner" id="editbanner" hidden>
+    ✏️ <span><b>מצב עריכה.</b> לחיצה על כל סכום פותחת אותו לכתיבה · כל שינוי נשמר מיד · כפתורי האסמכתאות גלויים רק לך ולרועי.</span>
+    <span class="saving hidden" id="savemark">נשמר ✓</span>
+  </div>
+
+  <div class="kpis" id="kpis"></div>
+
+  <section>
+    <div class="shead">
+      <h2>המחיר</h2>
+      <span class="note">מההצעה המקורית עד הסכום הסופי · ₪</span>
+    </div>
+    <details class="fold">
+    <summary>
+      <h2>1 · ההצעה המקורית</h2>
+      <span class="hint">11 סעיפים · 22.3.2026 · לפתיחה</span>
+      <span class="foldsum" id="sum-topics"></span>
+    </summary>
+    <div class="scroll"><table id="t-topics"></table></div>
+    </details>
+
+    <details class="fold">
+    <summary>
+      <h2>2 · ההקטנות</h2>
+      <span class="hint">שני סעיפים שירדו בדרך · לפתיחה</span>
+      <span class="foldsum" id="sum-cuts"></span>
+    </summary>
+    <div class="scroll"><table id="t-cuts"></table></div>
+    </details>
+
+    <details class="fold">
+    <summary>
+      <h2>3 · התוספות</h2>
+      <span class="hint">נמסרו בכתב ידו 18.11.2026 · לפתיחה</span>
+      <span class="foldsum" id="sum-extras"></span>
+    </summary>
+    <div class="scroll"><table id="t-extras"></table></div>
+    <div class="toolbar" id="tb-extras"></div>
+    </details>
+
+    <div class="grand" id="grand"></div>
+    <div class="chips" id="chips-bridge"></div>
+    <div class="shelf" id="shelf-price"></div>
+  </section>
+
+  <section>
+    <details class="fold">
+    <summary>
+      <h2>אופן התשלום</h2>
+      <span class="hint">בלי לוח תשלומים · לפתיחה</span>
+      <span class="foldsum" id="sum-pay"></span>
+    </summary>
+    <div class="scroll"><table id="t-pay"></table></div>
+    <div class="toolbar" id="tb-pay"></div>
+    <div class="chips" id="chips-pay"></div>
+    </details>
+  </section>
+
+  <section>
+    <div class="shead">
+      <h2>מה ה-<span class="num" id="h-total"></span> קונה</h2>
+      <span class="note">ברק הוא קבלן אחד שעשה את רוב הבית — אבל לא את הכל</span>
+    </div>
+    <div class="rowlab yes">✅ ברק עשה · בתוך המחיר</div>
+    <div class="chips">
+      <span class="chip">הריסה ופינוי</span><span class="chip">שלד</span><span class="chip">מחיצות</span>
+      <span class="chip">טיח פנים</span><span class="chip">שפכטל וצבע</span><span class="chip">שליכט חיצוני</span>
+      <span class="chip">איטום</span><span class="chip">חשמל</span><span class="chip">אינסטלציה</span>
+      <span class="chip">ריצוף וחיפוי מקלחות</span><span class="chip">מרפסת שמש בגג</span>
+      <span class="chip">הוצאת מדרגות לקומה שנייה</span><span class="chip">אלומיניום וחלונות</span>
+    </div>
+    <div class="rowlab no">⛔ לא ברק · ספקים נפרדים, כסף נוסף מעבר לסכום הזה <em style="font-weight:400;font-style:normal;color:var(--muted)">— לחיצה מראה כמה</em></div>
+    <div class="chips" id="chips-not"></div>
+    <div class="notpanel" id="notpanel" hidden></div>
+    <div class="notfoot" id="notfoot"></div>
+  </section>
+
+  <section>
+    <details class="fold">
+    <summary>
+      <h2>טיפים</h2>
+      <span class="hint">חמישה דברים ששווה לסגור מראש · לפתיחה</span>
+    </summary>
+    <ol class="lessons">
+      <li><span class="i">1</span><span><b>חוזה חתום ולוח תשלומים לפני שמתחילים.</b> <span class="d">בלי לוח, כל תשלום הוא משא ומתן מחדש.</span></span></li>
+      <li><span class="i">2</span><span><b>לשמור אסמכתה מהתשלום הראשון.</b> <span class="d">אצלנו ששת הראשונים נעשו לפני שהתחלנו לתייק, וכשהגיע הזמן להשוות ספרים זו התקופה היחידה שאי אפשר לאמת.</span></span></li>
+      <li><span class="i">3</span><span><b>״הערכה גסה״ בחשמל היא באמת הערכה — ומחיר לנקודה בעל פה לא שווה כלום בלי ספירה.</b> <span class="d">תומחר 63,000, נגמר ב-114,000 לפני מע״מ. קיבלנו מחיר לכל נקודה, אבל אף אחד לא ספר נקודות תוך כדי — והתוספת הגיעה בסוף כמספר אחד. <b>לסגור את החשמל אחרי תוכנית נקודות, ולדרוש את מחיר היחידה בכתב ואת הספירה המצטברת בכל שלב.</b></span></span></li>
+      <li><span class="i">4</span><span><b>״לפי מפרט״ מגן רק על מה שבמפרט.</b> <span class="d">לבקש לראות אותו לפני החתימה.</span></span></li>
+      <li><span class="i">5</span><span><b>כל תוספת — בכתב, עם סכום, באותו יום.</b> <span class="d">התוספות כאן הן כרבע מהעבודה, והפירוט שלהן הגיע רק בנובמבר.</span></span></li>
+    </ol>
+    </details>
+  </section>
+
+  <footer>
+    <div><b>המחירים אינם מחירון</b> — 2026, הקבלן הזה, ורמת הגימור שבחרנו.</div>
+    <div><b>אצלנו הוצאנו מדרגות וקומה שנייה</b> — בלי זה 165,200 ₪ יורדים, והטיח, הצבע, החשמל והאינסטלציה של הקומה קטנים איתם.</div>
+  </footer>
+</div>
+
+<dialog id="dlg">
+  <h3 id="dlg-t"></h3>
+  <p id="dlg-p"></p>
+  <input id="dlg-i" />
+  <div class="row">
+    <button class="primary" id="dlg-ok">שמירה</button>
+    <button id="dlg-x">ביטול</button>
+  </div>
+</dialog>
+
+<script>
+(function(){
+"use strict";
+const VAT = 1.18;
+const fmt = n => Math.round(n).toLocaleString("en-US");
+/* a leading "-" drifts to the wrong side in RTL: isolate the run and use a real minus sign */
+const fmtS = n => n<0 ? "‎−"+fmt(-n)+"‎" : fmt(n);
+const esc = s => String(s==null?"":s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const parseNum = s => { const v = Number(String(s).replace(/[^\d.-]/g,"")); return isFinite(v)?v:null; };
+
+/* ---------- built-in defaults: the page renders from these before db answers ---------- */
+const DEF_TOPICS = [
+  {id:"t1", label:"הוצאת מדרגות — כלונסאות, עמודים, בנייה, מכולות, גג רעפים", pre:140000, cut:140000},
+  {id:"t2", label:"טייח פנים — פתחי חלונות, גליפים, רשתות, ב-2 הקומות", pre:76000, cut:69000, note:"הוקטן ב-7,000"},
+  {id:"t3", label:"שליכט צבעוני חיצוני — רשתות, דבק, פיגומים", pre:67000, cut:67000},
+  {id:"t4", label:"צבע פנים כולל שפכטל", pre:65000, cut:65000},
+  {id:"t5", label:"עבודות חשמל", pre:63000, cut:63000, note:"בהצעה נכתב ״הערכה גסה״, לפני שהיו תוכניות חשמל. התוספת בפועל — 51,000 לפני מע״מ — מופיעה בטבלת התוספות."},
+  {id:"t6", label:"הריסה כולל פינוי למכולות", pre:56000, cut:56000},
+  {id:"t7", label:"אינסטלציה", pre:52000, cut:52000, note:"בהצעה נכתב ״לפי מפרט״. המפרט עצמו לא צורף."},
+  {id:"t8", label:"בנייה — מחיצות וקירות", pre:51000, cut:41000, note:"הוקטן ב-10,000"},
+  {id:"t9", label:"חיפוי וריצוף מקלחות כולל כניסה", pre:34000, cut:34000},
+  {id:"t10", label:"איטום — מסביב לבית, חדרים רטובים, מרפסת שמש", pre:27000, cut:27000},
+  {id:"t11", label:"מרפסת שמש בגג", pre:26000, cut:26000}
+];
+const DEF_EXTRAS = [
+  {id:"e1", label:"חשמל — תוספת", pre:51000, note:"הסעיף תומחר בהצעה כ״הערכה גסה״ לפני שהיו תוכניות חשמל. סה״כ החשמל בפועל: 114,000 לפני מע״מ (63,000 בהצעה + 51,000 כאן). התוספת נקבעה תוך כדי העבודה — נאמר מחיר לכל נקודה, אבל לא נספרו נקודות ולא נערך חישוב בכל פעם, ולכן היא הגיעה כמספר אחד בלי פירוק."},
+  {id:"e2", label:"אלומיניום וחלונות", pre:71303, note:"הצעה נפרדת, לא הייתה בהצעה המקורית. הפירוט שנמסר — 11 פתחים, כולל מע״מ: ויטרינה + תריס חשמלי + רשת הזזה 14,160 · חדר אורחים + רשת + תריס 10,242 · דלת למרפסת קומה שנייה 7,670 · חדר ילדים + רשת + תריס 7,080 · דלת מטבח 80/280 + רשת 4,708 · כניסה + רשת + תריס 4,720 · מול המדרגות (קיפ) 4,602 · מטבח + רשת + תריס 4,130 · רחצה כללי + רשת 4,047 · רחצה הורים קומה שנייה + רשת 3,540 · רחצה אור + רשת 2,561. מפרט: רשתות שקופות · מנועי פלמט עם 5 שנות אחריות · זכוכית תרמופלקס 3+3."},
+  {id:"e3", label:"עבודה נוספת", pre:24800, note:"שולמה במלואה ב-26.8.2026 — 24,800 ועוד מע״מ הם בדיוק 29,264, סכום ההעברה."},
+  {id:"e4", label:"פינוי ריצוף ישן", pre:3000},
+  {id:"e5", label:"עבודה נוספת", pre:13700},
+  {id:"e6", label:"עבודה נוספת", pre:7000},
+  {id:"e7", label:"עבודה נוספת", pre:5500},
+  {id:"e8", label:"עבודה נוספת", pre:4000},
+  {id:"e9", label:"עבודה נוספת", pre:3500},
+  {id:"e10", label:"עבודה נוספת", pre:3000},
+  {id:"e11", label:"עבודה נוספת", pre:3000},
+  {id:"e12", label:"עבודה נוספת", pre:2500},
+  {id:"e13", label:"50 שקים", pre:1800},
+  {id:"e14", label:"ריצוף", pre:1700},
+  {id:"e15", label:"פירוק כנפיים לתיקון", pre:1200}
+];
+/* what he actually charges for the extras, as written on his sheet */
+const DEF_EXTRAS_CHARGED = 195503;
+/* his own incl-VAT figure for the extras. 195,503 x 1.18 = 230,693.54 — he wrote 230,690.
+   We keep HIS number so the page matches his sheet to the shekel; editing the pre-VAT figure recomputes it. */
+const DEF_EXTRAS_CHARGED_INC = 230690;
+const DEF_CUTS = -17000; /* the two reduced items, pre-VAT */
+const DEF_PAY = [
+  {id:"p1", date:"19.04.2026", inc:75520},
+  {id:"p2", date:"06.05.2026", inc:58400},
+  {id:"p3", date:"18.06.2026", inc:60000},
+  {id:"p4", date:"10.07.2026", inc:82600},
+  {id:"p5", date:"04.08.2026", inc:15576},
+  {id:"p6", date:"07.08.2026", inc:14000, ref:"מזומן"},
+  {id:"p7", date:"26.08.2026", inc:29264, ref:"408678"},
+  {id:"p8", date:"01.09.2026", inc:70000, ref:"880233"},
+  {id:"p9", date:"09.09.2026", inc:60000, ref:"801881"},
+  {id:"p10", date:"14.09.2026", inc:90000, ref:"264042"},
+  {id:"p11", date:"02.11.2026", inc:60000, ref:"680858"},
+  {id:"p12", date:"16.11.2026", inc:50000, ref:"552201"}
+];
+
+/* ---------- live state ---------- */
+let topics = DEF_TOPICS.map(o=>({...o}));
+let extras = DEF_EXTRAS.map(o=>({...o}));
+let pays   = DEF_PAY.map(o=>({...o}));
+let meta   = { extrasCharged: DEF_EXTRAS_CHARGED, extrasChargedInc: DEF_EXTRAS_CHARGED_INC, cuts: DEF_CUTS };
+let ev     = {};              /* rowId -> [{t:"asset"|"link", id, url, name}] */
+let db=null, assets=null, canEdit=false;
+
+const byId = (arr,id)=>arr.find(r=>r.id===id);
+const listOf = kind => kind==="topic"?topics : kind==="extra"?extras : pays;
+
+/* ---------- totals ---------- */
+function totals(){
+  const tPre  = topics.reduce((s,r)=>s+(r.cut||0),0);
+  const xPre  = extras.reduce((s,r)=>s+(r.pre||0),0);
+  const charged = (meta.extrasCharged==null) ? xPre : meta.extrasCharged;
+  const chargedInc = (meta.extrasChargedInc==null) ? charged*VAT : meta.extrasChargedInc;
+  const grandPre = tPre + charged;
+  const tInc = tPre*VAT;
+  const grandInc = tInc + chargedInc;
+  const paid  = pays.reduce((s,r)=>s+(r.inc||0),0);
+  return {
+    tPre, tInc,
+    xPre, xInc: xPre*VAT, charged, chargedInc,
+    offerPre: topics.reduce((s,r)=>s+(r.pre||0),0),
+    grandPre, grandInc,
+    paid, paidPre: paid/VAT,
+    left: grandInc - paid
+  };
+}
+
+/* ---------- evidence cell ---------- */
+function evCell(rowId){
+  const items = ev[rowId]||[];
+  let h = '<div class="ev">';
+  for(const e of items){
+    const url  = e.t==="asset" ? ("/_blob/"+e.id) : e.url;
+    const icon = e.t==="asset" ? "📎" : "🔗";
+    h += '<a class="evlink" href="'+esc(url)+'" target="_blank" rel="noopener">'+icon+' '+esc(e.name||"אסמכתה")+'</a>';
+    if(canEdit) h += '<button class="xs" data-del="'+esc(rowId)+'|'+esc(e.id||e.url)+'" title="הסרה">✕</button>';
+  }
+  if(!items.length) h += '<span class="evmiss">חסרה אסמכתה</span>';
+  if(canEdit){
+    h += '<button class="mini" data-up="'+esc(rowId)+'">⬆ קובץ</button>';
+    h += '<button class="mini" data-link="'+esc(rowId)+'">🔗 קישור</button>';
+  }
+  return h+'</div>';
+}
+const nCell = (v,id,field,cls)=>
+  '<td class="n '+(cls||"")+'"><span class="editable" data-e="'+esc(id)+'|'+field+'">'+fmt(v)+'</span></td>';
+
+/* ---------- renderers ---------- */
+function renderTopics(){
+  const t=totals();
+  let h='<thead><tr><th>הסעיף</th><th>לפני מע״מ</th><th>כולל מע״מ</th></tr></thead><tbody>';
+  for(const r of topics){
+    const name = r.note
+      ? '<details><summary>'+esc(r.label)+'</summary><div class="det"><span>'+esc(r.note)+'</span></div></details>'
+      : esc(r.label);
+    h+='<tr><td>'+name+'</td>'+nCell(r.pre,r.id,"pre","mute")
+      +'<td class="n">'+fmt((r.pre||0)*VAT)+'</td></tr>';
+  }
+  h+='<tr class="total"><td>סה״כ ההצעה</td><td class="n">'+fmt(t.offerPre)+'</td><td class="n big">'+fmt(t.offerPre*VAT)+'</td></tr></tbody>';
+  document.getElementById("t-topics").innerHTML=h;
+  document.getElementById("sum-topics").innerHTML=fmt(t.offerPre*VAT)+'<small>'+fmt(t.offerPre)+' לפני מע״מ</small>';
+}
+function renderCuts(){
+  const t=totals(), cut=topics.filter(r=>(r.cut||0)!==(r.pre||0));
+  let h='<thead><tr><th>הסעיף</th><th>בהצעה</th><th>סוכם</th><th>ההקטנה</th><th>כולל מע״מ</th></tr></thead><tbody>';
+  for(const r of cut){
+    const d=(r.cut||0)-(r.pre||0);
+    h+='<tr><td>'+esc(r.label.replace(/ —.*/,""))+'</td><td class="n mute">'+fmt(r.pre)+'</td>'
+      +nCell(r.cut,r.id,"cut")+'<td class="n">'+fmtS(d)+'</td><td class="n">'+fmtS(d*VAT)+'</td></tr>';
+  }
+  const d=t.tPre-t.offerPre;
+  h+='<tr class="total"><td>סה״כ ההקטנות</td><td></td><td></td><td class="n">'+fmtS(d)+'</td><td class="n big">'+fmtS(d*VAT)+'</td></tr>';
+  h+='<tr class="check"><td colspan="5">ההקטנות סוכמו מול ברק בדרך. הבסיס אחרי ההקטנות: <b>'+fmt(t.tPre)+'</b> לפני מע״מ · <b>'+fmt(t.tInc)+'</b> כולל.</td></tr></tbody>';
+  document.getElementById("t-cuts").innerHTML=h;
+  document.getElementById("sum-cuts").innerHTML=fmtS(d*VAT)+'<small>'+fmtS(d)+' לפני מע״מ</small>';
+}
+function renderExtras(){
+  const t=totals(), span=canEdit?4:3, diff=t.xPre-t.charged;
+  let h='<thead><tr><th>תוספת</th><th>לפני מע״מ</th><th>כולל מע״מ</th>'+(canEdit?'<th></th>':'')+'</tr></thead><tbody>';
+  for(const r of extras){
+    const name = r.note
+      ? '<details><summary>'+esc(r.label)+'</summary><div class="det"><span>'+esc(r.note)+'</span></div></details>'
+      : '<span class="editable" data-e="'+esc(r.id)+'|label">'+esc(r.label)+'</span>';
+    h+='<tr><td>'+name+'</td>'+nCell(r.pre,r.id,"pre","mute")+'<td class="n">'+fmt((r.pre||0)*VAT)+'</td>'
+      +(canEdit?'<td><button class="xs" data-rm="'+esc(r.id)+'" title="מחיקת שורה">✕</button></td>':'')+'</tr>';
+  }
+  h+='<tr class="total"><td>סכום השורות</td><td class="n">'+fmt(t.xPre)+'</td><td class="n big">'+fmt(t.xInc)+'</td>'+(canEdit?'<td></td>':'')+'</tr>';
+  h+='<tr class="total"><td>מה שברק גובה</td>'+nCell(t.charged,"meta","extrasCharged")+'<td class="n big">'+fmt(t.chargedInc)+'</td>'+(canEdit?'<td></td>':'')+'</tr>';
+  h+='<tr class="check"><td colspan="'+span+'">'+(Math.abs(diff)<1
+      ? '✅ הסכימה מסתדרת לשקל.'
+      : (diff>0 ? '🟢 <b>הוא גובה '+fmt(diff)+' ₪ פחות מסכום השורות שלו עצמו</b> — ההפרש לטובתנו.'
+                : '🔴 <b>הוא גובה '+fmt(-diff)+' ₪ יותר מסכום השורות</b> — לבדוק מולו.'))
+    +'</td></tr></tbody>';
+  document.getElementById("t-extras").innerHTML=h;
+  document.getElementById("sum-extras").innerHTML=fmt(t.chargedInc)+'<small>'+fmt(t.charged)+' לפני מע״מ</small>';
+}
+function renderBridge(){
+  const t=totals();
+  document.getElementById("grand").innerHTML=
+    '<h2>סה״כ העבודה</h2><span class="foldsum">'+fmt(t.grandInc)+'<small>'+fmt(t.grandPre)+' לפני מע״מ</small></span>';
+  const pct = t.grandPre? Math.round(t.charged/t.grandPre*100):0;
+  const big = extras.slice().sort((a,b)=>b.pre-a.pre).slice(0,2);
+  const bigPct = t.xPre? Math.round((big.reduce((s,r)=>s+r.pre,0))/t.xPre*100):0;
+  document.getElementById("chips-bridge").innerHTML=
+    '<span class="chip">התוספות הן '+pct+'% מהעבודה</span>'
+   +'<span class="chip">'+esc(big.map(r=>r.label.replace(/ —.*/,"")).join(" + "))+' לבדם — '+bigPct+'% מהתוספות</span>'
+   +'<span class="chip">תומחרו לאורך הדרך, לא מראש</span>';
+}
+function renderPay(){
+  const t=totals(); let run=0;
+  let h='<thead><tr><th>#</th><th>תאריך</th><th>לפני מע״מ</th><th>כולל מע״מ</th><th>מצטבר</th><th>%</th><th></th><th>אסמכתה</th>'+(canEdit?'<th></th>':'')+'</tr></thead><tbody>';
+  pays.forEach((r,i)=>{
+    run+=r.inc||0;
+    const pc = t.grandInc? (run/t.grandInc*100):0;
+    h+='<tr><td class="mute">'+(i+1)+'</td><td class="n"><span class="editable" data-e="'+esc(r.id)+'|date">'+esc(r.date)+'</span></td>'
+      +'<td class="n mute">'+fmt((r.inc||0)/VAT)+'</td>'+nCell(r.inc,r.id,"inc")
+      +'<td class="n mute">'+fmt(run)+'</td><td class="n">'+pc.toFixed(1)+'%</td>'
+      +'<td class="barcell"><span class="bar"><i style="width:'+Math.min(100,pc).toFixed(1)+'%"></i></span></td>'
+      +'<td>'+evCell(r.id)+'</td>'+(canEdit?'<td><button class="xs" data-rm="'+esc(r.id)+'" title="מחיקת שורה">✕</button></td>':'')+'</tr>';
+  });
+  h+='<tr class="total"><td>סה״כ</td><td></td><td class="n">'+fmt(t.paidPre)+'</td><td class="n big">'+fmt(t.paid)+'</td><td></td><td class="n">'
+    +(t.grandInc?(t.paid/t.grandInc*100).toFixed(1):"0")+'%</td><td></td><td></td>'+(canEdit?'<td></td>':'')+'</tr></tbody>';
+  document.getElementById("t-pay").innerHTML=h;
+  document.getElementById("sum-pay").innerHTML=fmt(t.paid)+'<small>'+(t.grandInc?(t.paid/t.grandInc*100).toFixed(1):"0")+'% מהעבודה</small>';
+  const miss = pays.filter(r=>!(ev[r.id]||[]).length);
+  const amts = pays.map(r=>r.inc||0);
+  document.getElementById("chips-pay").innerHTML=
+    '<span class="chip">'+pays.length+' העברות · ממוצע ~'+fmt(t.paid/(pays.length||1))+'</span>'
+   +'<span class="chip">נותר '+fmt(t.left)+' · העבודה בעיצומה</span>'
+   +'<span class="chip">טווח '+fmt(Math.min(...amts))+'–'+fmt(Math.max(...amts))+'</span>'
+   +'<span class="chip">אין מקדמה מוגדרת</span>'
+   +(miss.length?'<span class="chip" style="border-color:var(--flag);color:var(--flag)">חסרות '+miss.length+' אסמכתאות</span>':'<span class="chip">כל האסמכתאות קיימות ✓</span>');
+}
+function renderKpis(){
+  const t=totals();
+  document.getElementById("kpis").innerHTML=
+    '<div class="kpi"><div class="k">סה״כ העבודה</div><div class="v">'+fmt(t.grandInc)+'</div><div class="pre">'+fmt(t.grandPre)+' לפני מע״מ</div></div>'
+   +'<div class="kpi lead"><div class="k">שולם</div><div class="v">'+fmt(t.paid)+'</div><div class="pre">'+fmt(t.paidPre)+' לפני מע״מ</div></div>'
+   +'<div class="kpi"><div class="k">נותר</div><div class="v">'+fmt(t.left)+'</div><div class="pre">'+fmt(t.left/VAT)+' לפני מע״מ</div></div>'
+   +'<div class="kpi"><div class="k">העברות</div><div class="v">'+pays.length+'</div><div class="pre">'+esc(pays[0]?pays[0].date.slice(3):"")+'–'+esc(pays.length?pays[pays.length-1].date.slice(3):"")+'</div></div>';
+  document.getElementById("h-total").textContent=fmt(t.grandInc);
+}
+/* ---- the suppliers that are NOT Barak. Figures from our own books, 11.11.2026 ledger. ---- */
+const NOTBARAK=[
+ {k:"מטבח", sup:[{n:"פורמג׳ו",v:33100,w:"זה מה ששילמנו אנחנו. ההורים של יעל שילמו את השאר ישירות — ההצעה כולה הייתה 126,100."}]},
+ {k:"קרמיקה וכלים סניטריים", sup:[{n:"א.א קרמיקה (גל)",v:99620,w:"ההצעה הייתה 96,343 — חריגה של 3,277. יש זיכוי 1,000 ₪ שלא נוצל."}]},
+ {k:"נגרות", sup:[{n:"רפאל ״בנגריה״ ברקן — ארונות רחצה",v:21000},{n:"נגריית גולן סנאדו — ארונות",v:20886,w:"נותרו לו 17,700 מתוך 38,586."}]},
+ {k:"מיזוג", sup:[{n:"אבישב",v:59100,w:"ההצעה 53,100 — החריגה 6,000 היא תוספות."},{n:"מוטי וחן — פירוק לפני ההריסה",v:900}]},
+ {k:"גז", sup:[{n:"עבד / לפלאש גז",v:3750,w:"מתוך הצעה של 9,908 — נותרו ~6,158."}]},
+ {k:"גינון", sup:[{n:"עיזאת — פינוי, עקירה וגינון",v:38230,w:"🔴 אין הצעה בכתב ואין סכום מוסכם."},{n:"משתלת בן עזר",v:6650},{n:"עאזם נגם — צמחים ועצים",v:3500}]},
+ {k:"מקלחונים", sup:[{n:"לירן גלאס",v:22243,w:"4,083 שולמו כמקדמה למקלחון ההורים בלי מחיר סופי."}]},
+ {k:"דלתות ושערים", sup:[{n:"טרלידור — שער כניסה, חניה, מעקה",v:22300,w:"נותרו ~6,475."},{n:"לב נפתלייב — דלת וחלון ממ״ד",v:11210},{n:"רב בריח — דלת כניסה ודלתות פנים",v:0,u:1,w:"סוכם 31,474, עוד לא שולם."},{n:"דלתות תבור",v:0,u:1,w:"הצעה 26-0853 — הסכום לא ידוע."}]},
+ {k:"מעקה המדרגות", sup:[{n:"מסגריית אלון (עופר)",v:22715,w:"⚠️ 7,715 מהם בלי אסמכתה."}]},
+ {k:"חיפוי קיר לבנים", sup:[{n:"קרן סטון — אבן רטרו ״איילנד״",v:0,u:1,w:"משלוח 18.11, התקנה 19.11. הסכום לא נרשם אצלנו."}]},
+ {k:"בטון מוטבע בחצר", sup:[{n:"אותנטיק אומנות הבניה (גל)",v:59944,w:"⚠️ שולם במלואו לפני סיום העבודה, ועוד שלוש עבודות פתוחות."}]},
+ {k:"גדר, מוטות ובמבוק לחצר", sup:[{n:"עוד לא זוהה ספק",v:0,u:1,w:"לא מופיע בספר הספקים. צריך לשייך תשלום או לקבוע מי עשה."}]},
+ {k:"תאורה", sup:[{n:"מחסני תאורה (רגבה)",v:8278},{n:"הבית של עידה",v:6700}]},
+ {k:"חימום תת-רצפתי", sup:[{n:"סאן היט",v:2773,w:"בדיוק חצי מההצעה — נותרו 2,773."}]},
+ {k:"עיצוב פנים", sup:[{n:"נופר צבר צבי",v:15000,w:"10,000 שכר טרחה + 5,000 בונוס. ייתכן שנותרו 5,000."}]},
+ {k:"מהנדס והיתרים", sup:[{n:"עמית",v:0,u:1,w:"סוכם 11,000, עוד לא שולם."}]}
+];
+let openK=null;
+function renderNot(){
+  const el=document.getElementById("chips-not"); if(!el) return;
+  el.innerHTML = NOTBARAK.map(c=>{
+    const v=c.sup.reduce((s,x)=>s+(x.v||0),0), unk=c.sup.some(x=>x.u);
+    return '<button class="chip out'+(unk&&!v?' unk':'')+'" data-nb="'+esc(c.k)+'" aria-expanded="'+(openK===c.k)+'">'
+      +esc(c.k)+'<span class="amt">'+(v?fmt(v):'❔')+'</span></button>';
+  }).join("");
+  const p=document.getElementById("notpanel"), c=NOTBARAK.find(x=>x.k===openK);
+  if(!c){ p.hidden=true; p.innerHTML=""; }
+  else{
+    p.hidden=false;
+    const v=c.sup.reduce((s,x)=>s+(x.v||0),0);
+    p.innerHTML='<div class="hd">'+esc(c.k)+'</div>'
+      + c.sup.map(s=>'<div class="ln"><span class="sp">'+esc(s.n)+'</span>'
+          +(s.w?'<span class="wn">'+esc(s.w)+'</span>':'')
+          +'<span class="v'+(s.u&&!s.v?' unk':'')+'">'+(s.v?fmt(s.v)+' ₪':'❔ לא נרשם')+'</span></div>').join("")
+      + (c.sup.length>1?'<div class="ln" style="border-top:1px solid var(--line);padding-top:7px"><span class="sp"><b>סה״כ ששולם</b></span><span class="v">'+fmt(v)+' ₪</span></div>':'');
+  }
+  const known=NOTBARAK.reduce((s,c)=>s+c.sup.reduce((a,x)=>a+(x.v||0),0),0);
+  const miss=NOTBARAK.reduce((s,c)=>s+c.sup.filter(x=>x.u&&!x.v).length,0);
+  document.getElementById("notfoot").innerHTML=
+    'שולם לספקים האלה עד היום: <b>'+fmt(known)+' ₪</b> — מעבר ל-'+fmt(totals().paid)+' ₪ שכבר שולמו לברק.'
+    +(miss?' · <b style="color:var(--flag)">'+miss+' ספקים בלי סכום רשום.</b>':'');
+}
+document.addEventListener("click", e=>{
+  const b=e.target.closest("[data-nb]"); if(!b) return;
+  const k=b.getAttribute("data-nb"); openK = (openK===k)?null:k; renderNot();
+});
+const SLOTS=[
+  {id:"doc-offer",  nm:"הצעת המחיר",            hint:"22.3.2026 · 11 הסעיפים"},
+  {id:"doc-extras", nm:"דף התוספות בכתב ידו",   hint:"צילום וואטסאפ · 18.11.2026"},
+  {id:"doc-pay",    nm:"רשימת התשלומים שלו",    hint:"הצד השני של אותו דף"},
+  {id:"doc-gdoc",   nm:"ה-Google Doc מברק",     hint:"המסמך ששלח בדרך · קישור"}
+];
+function renderShelf(){
+  const el=document.getElementById("shelf-price"); if(!el) return;
+  if(!canEdit){ el.innerHTML=""; el.style.display="none"; return; }
+  el.style.display="";
+  const extra=Object.keys(ev).filter(k=>k.startsWith("doc-")&&!SLOTS.some(s=>s.id===k));
+  const miss=SLOTS.filter(s=>!(ev[s.id]||[]).length).length;
+  let h='<div class="t">📎 אסמכתאות למחיר <em>'+(miss?('חסרות '+miss+' מתוך '+SLOTS.length):'הכל כאן ✓')+'</em></div>';
+  for(const s of SLOTS.concat(extra.map(id=>({id,nm:id.replace("doc-",""),hint:""})))){
+    const has=(ev[s.id]||[]).length;
+    h+='<div class="slot'+(has?' has':'')+'"><span class="nm">'+esc(s.nm)+(s.hint?' <em style="font-style:normal;font-size:11px;opacity:.7">· '+esc(s.hint)+'</em>':'')+'</span>'+evCell(s.id)+'</div>';
+  }
+  el.innerHTML=h;
+}
+function renderTools(){
+  document.getElementById("tb-extras").innerHTML = canEdit
+    ? '<button class="mini go" id="add-extra">+ תוספת חדשה</button>' : "";
+  document.getElementById("tb-pay").innerHTML = canEdit
+    ? '<button class="mini go" id="add-pay">+ תשלום חדש</button>' : "";
+}
+function renderAll(){ renderKpis(); renderTopics(); renderCuts(); renderExtras(); renderBridge(); renderPay(); renderTools(); renderShelf(); renderNot(); }
+
+/* ---------- persistence ---------- */
+let saveTimer=null;
+function flash(){ const m=document.getElementById("savemark"); if(!m)return;
+  m.classList.remove("hidden"); clearTimeout(saveTimer); saveTimer=setTimeout(()=>m.classList.add("hidden"),1400); }
+async function saveRow(kind,row){
+  if(!db) return;
+  try{ await db.collection("lines").doc(row.id).set({...row,kind,order:listOf(kind).indexOf(row)}); flash(); }
+  catch(e){ console.warn("save failed",e); }
+}
+async function saveMeta(){ if(!db)return; try{ await db.doc("meta/totals").set(meta); flash(); }catch(e){console.warn(e);} }
+async function saveEv(rowId){
+  if(!db) return;
+  try{ await db.collection("evidence").doc(rowId).set({items:ev[rowId]||[]}); flash(); }
+  catch(e){ console.warn("ev save failed",e); }
+}
+async function removeRow(kind,id){
+  const arr=listOf(kind), i=arr.findIndex(r=>r.id===id); if(i<0)return;
+  arr.splice(i,1); renderAll();
+  if(db){ try{ await db.collection("lines").doc(id).set({kind,deleted:true}); flash(); }catch(e){console.warn(e);} }
+}
+
+/* ---------- dialog ---------- */
+const dlg=document.getElementById("dlg");
+function ask(title,hint,value,rtl){
+  return new Promise(res=>{
+    document.getElementById("dlg-t").textContent=title;
+    document.getElementById("dlg-p").textContent=hint;
+    const i=document.getElementById("dlg-i"); i.value=value||""; i.classList.toggle("rtl",!!rtl);
+    const ok=document.getElementById("dlg-ok"), x=document.getElementById("dlg-x");
+    const done=v=>{ ok.onclick=null;x.onclick=null;dlg.onclose=null;dlg.close(); res(v); };
+    ok.onclick=()=>done(i.value.trim()); x.onclick=()=>done(null); dlg.onclose=()=>res(null);
+    dlg.showModal(); i.focus(); i.select();
+  });
+}
+
+/* ---------- interactions ---------- */
+document.addEventListener("click", async e=>{
+  const up=e.target.closest("[data-up]"), lk=e.target.closest("[data-link]"),
+        del=e.target.closest("[data-del]"), rm=e.target.closest("[data-rm]");
+  if(up){ pickFile(up.getAttribute("data-up")); return; }
+  if(lk){
+    const id=lk.getAttribute("data-link");
+    const url=await ask("קישור לאסמכתה","Google Docs, Google Sheets, Drive, Word באונליין — כל קישור. קובצי Word ו-Excel שמורים במחשב אינם נתמכים להעלאה ישירה, אז מעלים אותם לדרייב ומדביקים כאן את הקישור.","https://");
+    if(!url || url==="https://") return;
+    const name=await ask("שם לקישור","איך לקרוא לו בטבלה","מסמך",true);
+    ev[id]=(ev[id]||[]).concat([{t:"link",url,name:name||"מסמך"}]); renderAll(); saveEv(id); return;
+  }
+  if(del){
+    const [rowId,key]=del.getAttribute("data-del").split("|");
+    ev[rowId]=(ev[rowId]||[]).filter(x=>(x.id||x.url)!==key); renderAll(); saveEv(rowId); return;
+  }
+  if(rm){
+    const id=rm.getAttribute("data-rm");
+    if(!confirm("למחוק את השורה?")) return;
+    removeRow(id[0]==="p"?"payment":"extra", id); return;
+  }
+  if(e.target.id==="add-extra"){
+    const label=await ask("תוספת חדשה","מה התוספת","עבודה נוספת",true); if(label===null)return;
+    const v=await ask("סכום לפני מע״מ","מספר בלבד — המע״מ מחושב אוטומטית","");
+    const pre=parseNum(v); if(pre===null)return;
+    const row={id:"x"+Date.now(),label:label||"תוספת",pre}; extras.push(row); renderAll(); saveRow("extra",row); return;
+  }
+  if(e.target.id==="add-pay"){
+    const date=await ask("תשלום חדש","תאריך — למשל 01.12.2026","");  if(date===null)return;
+    const v=await ask("סכום כולל מע״מ","מספר בלבד","");
+    const inc=parseNum(v); if(inc===null)return;
+    const ref=await ask("אסמכתה","מספר אסמכתה, או ״מזומן״. אפשר להשאיר ריק","",true);
+    const row={id:"y"+Date.now(),date:date||"",inc,ref:ref||""}; pays.push(row); renderAll(); saveRow("payment",row); return;
+  }
+});
+
+/* inline editing */
+document.addEventListener("focusin", e=>{
+  const el=e.target.closest(".editable"); if(!el||!canEdit) return;
+  el.contentEditable="true"; el.dataset.prev=el.textContent;
+});
+document.addEventListener("keydown", e=>{
+  if(e.key==="Enter" && e.target.closest(".editable")){ e.preventDefault(); e.target.blur(); }
+  if(e.key==="Escape" && e.target.closest(".editable")){ const el=e.target.closest(".editable"); el.textContent=el.dataset.prev||""; el.blur(); }
+});
+document.addEventListener("focusout", e=>{
+  const el=e.target.closest(".editable"); if(!el||!el.isContentEditable) return;
+  el.contentEditable="false";
+  const [id,field]=(el.getAttribute("data-e")||"").split("|");
+  const raw=el.textContent.trim();
+  if(id==="meta"){ const n=parseNum(raw); if(n!==null){ meta.extrasCharged=n; meta.extrasChargedInc=Math.round(n*VAT); saveMeta(); } renderAll(); wireEditable(); return; }
+  const row = byId(topics,id)||byId(extras,id)||byId(pays,id); if(!row){ renderAll(); return; }
+  const kind = byId(topics,id)?"topic": byId(extras,id)?"extra":"payment";
+  if(field==="label"||field==="date"||field==="ref"){ if(raw) row[field]=raw; }
+  else { const n=parseNum(raw); if(n!==null){ row[field]=n; if(field==="pre"&&kind==="topic"&&row.cut===row.pre) row.cut=n; } }
+  renderAll(); saveRow(kind,row);
+});
+/* make editable spans focusable once we know the viewer can edit */
+function wireEditable(){ document.querySelectorAll(".editable").forEach(el=>el.tabIndex=0); }
+
+/* uploads */
+let fileInput=null;
+function pickFile(rowId){
+  if(!assets){ alert("העלאת קבצים לא זמינה בתצוגה הזאת."); return; }
+  if(!fileInput){
+    fileInput=document.createElement("input"); fileInput.type="file"; fileInput.className="hidden";
+    fileInput.accept="image/*,application/pdf,.pdf,.jpg,.jpeg,.png,.webp,.heic,.gif,.svg,.csv,.txt,.md,.json";
+    document.body.appendChild(fileInput);
+  }
+  fileInput.value="";
+  fileInput.onchange=async()=>{
+    const f=fileInput.files&&fileInput.files[0]; if(!f) return;
+    const btn=document.querySelector('[data-up="'+rowId+'"]');
+    if(btn){ btn.textContent="מעלה…"; btn.disabled=true; }
+    try{
+      const r=await assets.upload(f);
+      ev[rowId]=(ev[rowId]||[]).concat([{t:"asset",id:r.id,name:f.name.replace(/\.[^.]+$/,"").slice(0,28)}]);
+      renderAll(); wireEditable(); saveEv(rowId);
+    }catch(err){
+      alert("ההעלאה נכשלה ("+(err&&err.code||"")+").\nקובצי Word, Excel ו-Google Docs אינם נתמכים כקובץ — להעלות אותם לדרייב ולהוסיף כאן ב״🔗 קישור״.");
+      renderAll(); wireEditable();
+    }
+  };
+  fileInput.click();
+}
+
+/* ---------- boot ---------- */
+renderAll();
+(async function(){
+  try{
+    const user = await claude.use("user");
+    canEdit = !!(user && user.canEdit && user.canEdit());
+  }catch(e){ canEdit=false; }
+  try{ db = await claude.use("db"); }catch(e){ db=null; }
+  try{ assets = canEdit ? await claude.use("assets") : null; }catch(e){ assets=null; }
+
+  if(canEdit){ document.body.classList.add("canedit"); document.getElementById("editbanner").hidden=false; }
+
+  if(db){
+    const t=setTimeout(()=>{},10000);
+    try{
+      const rows = await db.collection("lines").get();
+      (rows||[]).forEach(d=>{
+        const v=d.data?d.data():d; const id=v.id||d.id; if(!id) return;
+        const arr = v.kind==="topic"?topics : v.kind==="payment"?pays : extras;
+        const i=arr.findIndex(r=>r.id===id);
+        if(v.deleted){ if(i>=0) arr.splice(i,1); return; }
+        if(i>=0) Object.assign(arr[i],v); else arr.push({...v});
+      });
+      const m = await db.doc("meta/totals").get();
+          const mv = m && (m.data?m.data():m);
+      if(mv && typeof mv.extrasCharged==="number") meta.extrasCharged=mv.extrasCharged;
+      if(mv && typeof mv.extrasChargedInc==="number") meta.extrasChargedInc=mv.extrasChargedInc;
+      const evs = await db.collection("evidence").get();
+      (evs||[]).forEach(d=>{ const v=d.data?d.data():d; const id=d.id||v.id; if(id&&Array.isArray(v.items)) ev[id]=v.items; });
+    }catch(e){ console.warn("db load",e); }
+    clearTimeout(t);
+  }
+  renderAll(); wireEditable();
+})();
+})();
+</script>
+
+</body>
+</html>
